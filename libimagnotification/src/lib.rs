@@ -1,6 +1,5 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-    }
-}
+extern crate notify_rust;
+
+pub mod notification;
+pub mod result;
+
