@@ -11,6 +11,8 @@ let
     zlib
     cmake
     which
+    dbus
+    pkgconfig
   ];
 in
 
