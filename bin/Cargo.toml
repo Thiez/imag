@@ -3,6 +3,9 @@ name = "imag"
 version = "0.2.0"
 authors = ["Matthias Beyer <mail@beyermatthias.de>"]
 
+[profile.dev]
+codegen-units = 2
+
 [dependencies]
 version = "2.0"
 walkdir = "0.1.5"
