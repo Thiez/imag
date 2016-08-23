@@ -3,6 +3,9 @@ name = "libimagrt"
 version = "0.2.0"
 authors = ["Matthias Beyer <mail@beyermatthias.de>"]
 
+[profile.dev]
+codegen-units = 2
+
 [dependencies]
 clap = "2.*"
 env_logger = "0.3"
