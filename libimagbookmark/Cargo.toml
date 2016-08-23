@@ -3,6 +3,9 @@ name = "libimagbookmark"
 version = "0.1.0"
 authors = ["Matthias Beyer <mail@beyermatthias.de>"]
 
+[profile.dev]
+codegen-units = 2
+
 [dependencies]
 log = "0.3"
 semver = "0.2"
