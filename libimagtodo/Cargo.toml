@@ -3,6 +3,9 @@ name = "libimagtodo"
 version = "0.2.0"
 authors = ["mario <mario-krehl@gmx.de>"]
 
+[profile.dev]
+codegen-units = 2
+
 [dependencies]
 semver = "0.2"
 task-hookrs = "0.2"
