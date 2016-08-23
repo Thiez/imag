@@ -3,6 +3,9 @@ name = "libimagstorestdhook"
 version = "0.2.0"
 authors = ["Matthias Beyer <mail@beyermatthias.de>"]
 
+[profile.dev]
+codegen-units = 2
+
 [dependencies]
 toml = "0.2.*"
 log = "0.3"
