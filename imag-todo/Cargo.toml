@@ -3,6 +3,9 @@ authors = ["mario <mario-krehl@gmx.de>"]
 name = "imag-todo"
 version = "0.2.0"
 
+[profile.dev]
+codegen-units = 2
+
 [dependencies]
 clap = "2.*"
 glob = "0.2.11"
