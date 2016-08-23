@@ -3,6 +3,9 @@ name = "libimagentrymarkdown"
 version = "0.2.0"
 authors = ["Matthias Beyer <mail@beyermatthias.de>"]
 
+[profile.dev]
+codegen-units = 2
+
 [dependencies]
 log = "0.3"
 hoedown = "5.0.0"
