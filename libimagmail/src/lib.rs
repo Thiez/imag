@@ -8,6 +8,7 @@ extern crate filters;
 extern crate libimagstore;
 extern crate libimagref;
 
+pub mod cache;
 pub mod error;
 pub mod hasher;
 pub mod iter;
