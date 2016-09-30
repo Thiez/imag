@@ -9,6 +9,7 @@ mailparse = "0.2.0"
 semver = "0.2"
 toml = "0.2.*"
 filters = "0.1.0"
+walkdir = "0.1.8"
 
 [dependencies.libimagstore]
 path = "../libimagstore"
