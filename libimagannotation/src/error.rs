@@ -24,7 +24,7 @@ generate_error_module!(
         StoreIdGenerationError => "Error generating StoreId object",
 
         LinkError              => "Link error",
-        LinkingError           => "Error while linking",
+        LinkingError           => "Error while linking"
 
     );
 );
