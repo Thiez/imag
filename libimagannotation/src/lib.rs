@@ -20,8 +20,8 @@
 extern crate uuid;
 
 #[macro_use] extern crate libimagerror;
+#[macro_use] extern crate libimagstore;
 extern crate libimaglink;
-extern crate libimagstore;
 extern crate libimagutil;
 
 module_entry_path_mod!("annotation");
