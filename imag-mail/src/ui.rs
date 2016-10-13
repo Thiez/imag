@@ -12,6 +12,7 @@ pub fn build_ui<'a>(app: App<'a, 'a>) -> App<'a, 'a> {
                          .required(true)
                          .help("Path to the mail file or a directory which is then searched recursively")
                          .value_name("PATH"))
+                    )
 
         .subcommand(SubCommand::with_name("list")
                     .about("List all stored references to mails")
