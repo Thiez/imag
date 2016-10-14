@@ -61,9 +61,8 @@ impl<'a> Mail<'a> {
     ///
     /// If a path to a file is passed, this behaves like `Mail::import_from_path()` and returns a
     /// `Vec` of len 1.
-    pub fn import_from_dir<P, F, I, T: 'a>(store: &Store, p: P, tracefn: F) -> MailIterator<'a, T, I>
+    pub fn import_from_dir<P, I, T: 'a>(store: &Store, p: P) -> MailIterator<'a, T, I>
         where P: AsRef<Path>,
-              F: Fn(&Error) -> (),
               I: Iterator<Item = Result<Mail<'a>>>
     {
         use walkdir::WalkDir;
@@ -71,20 +70,14 @@ impl<'a> Mail<'a> {
         let iter = WalkDir::new(p)
             .follow_links(false)
             .into_iter()
-            .filter_map(|result| {
-                match result {
-                    Err(err) => {
-                        tracefn(&err);
-                        None
-                    },
-                    Ok(entry) => if entry.file_type().is_file() {
-                        Some(entry)
-                    } else {
-                        None
-                    },
-                }
-            })
-            .map(|entry| Mail::import_from_path(store, entry.path()));
+            .map(|entry| {
+                entry.and_then(|entry| if entry.file_type().is_file() {
+                    Mail::import_from_path(store, entry.path())
+                } else {
+                    Err(MEK::NotAFileError.into_error())
+                })
+                .map_err_into(MEK::IOError)
+            });
 
         MailIterator::new(iter)
     }

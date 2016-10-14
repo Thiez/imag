@@ -6,6 +6,7 @@ generate_error_module!(
 
         FetchByHashError => "Error fetching mail from Store by hash",
         FetchError       => "Error fetching mail from Store",
+        NotAFileError    => "Path is not a file",
         IOError => "IO Error"
     );
 );
