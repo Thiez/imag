@@ -71,6 +71,12 @@ pub mod iter {
 
     }
 
+    impl<I> From<I> for LinkIter where I: Iterator<Item = Link> {
+        fn from(other: I) -> LinkIter {
+            LinkIter(other.into_iter())
+        }
+    }
+
     impl Iterator for LinkIter {
         type Item = Link;
 
