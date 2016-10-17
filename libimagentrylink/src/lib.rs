@@ -37,6 +37,7 @@ extern crate toml;
 extern crate semver;
 extern crate url;
 extern crate crypto;
+extern crate filters;
 
 #[macro_use] extern crate libimagstore;
 #[macro_use] extern crate libimagerror;
