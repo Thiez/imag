@@ -128,7 +128,10 @@ fn list(rt: &Runtime) {
                 Ok(links) => {
                     debug!("Listing...");
                     for (i, link) in links.enumerate() {
-                        println!("{: >3}: {}", i, link);
+                        match link {
+                            Ok(link) => println!("{: >3}: {}", i, link),
+                            Err(e)   => trace_error(&e)
+                        }
                     };
                     debug!("... ready with listing");
                 },
